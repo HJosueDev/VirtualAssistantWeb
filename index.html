@@ -1,0 +1,185 @@
+﻿<!DOCTYPE HTML>
+<!--
+	Ethereal by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Assistant</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+
+		<meta charset="utf-8">
+  		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  		<link rel="stylesheet" href="css/bootstrap.css">
+  		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+	  	<script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.4.0/annyang.min.js"></script>
+  		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<!-- script src="https://code.jquery.com/jquery-2.1.4.js"></script-->
+
+
+		<script src="artyom-source/artyom.window.min.js"></script>
+		
+	</head>
+	<body>
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Wrapper -->
+					<div id="wrapper">
+
+						<!-- Panel (Banner) -->
+							<section class="panel banner right">
+								<div class="content color0 span-3-75">
+									<h1 class="major">Hola, soy<br />
+									Jackee Assistant</h1>
+									<p>Tu asistente personal para domotica, juntos disfrutaremos de la tecnología que se ha creado hasta el momento.</p>
+									<ul class="actions">
+										<li><a href="#first" class="button special color1 circle icon fa-angle-right"></a></li>
+									</ul>
+								</div>
+								<div class="image filtered span-1-75" data-position="25% 25%">
+									<img src="images/pic01.png" alt="" />
+								</div>
+							</section>
+
+						<!-- Panel (Spotlight) -->
+						<!--
+							<section class="panel spotlight medium right" id="first">
+								<div class="content span-7">
+									<h2 class="major">Sed etiam aenean</h2>
+									<p>Mauris et ligula arcu. Proin dapibus convallis accumsan. Lorem maximus hendrerit orci, sit amet elementum massa hendrerit sed. Donec et ullamcorper ligula. Suspendisse amet potenti. Ut pretium libero eleifend euismod sed tristique. Quisque dictum magna risus, id ultricies justo sagittis vitae. Sed id odio tempor, porttitor elit amet, gravida hendrerit fringilla lorem ipsum dolor.</p>
+								</div>
+								<div class="image filtered tinted" data-position="top left">
+									<img src="images/pic02.jpg" alt="" />
+								</div>
+							</section>
+						-->
+
+						<!-- Panel -->
+							<section class="panel color1">
+								<div class="intro joined">
+									<h2 class="major">Opciones que puedo controlar</h2>
+									<p>Utilizando conexión wifi puedo enviar señales a un microprocesador, el cual envia un pulso de onda AC, activando una salida que activa un contacto, que enciende un aparato en la red.</p>
+								</div>
+								<div class="inner">
+									<ul class="grid-icons three connected">
+										<li><span class="icon fa-television"><span class="label">Lorem</span></span></li>
+										<li><span class="icon fa-camera-retro"><span class="label">Ipsum</span></span></li>
+										<li><span class="icon fa-cog"><span class="label">Dolor</span></span></li>
+										<li><span class="icon fa-lightbulb-o"><span class="label">Sit</span></span></li>
+										<li><span class="icon fa-bar-chart"><span class="label">Amet</span></span></li>
+										<li><span class="icon fa-snowflake-o"><span class="label">Nullam</span></span></li>
+									</ul>
+								</div>
+							</section>
+
+						<!-- Panel -->
+
+							<section class="panel">
+								<div class="intro color2">
+									<h2 class="major">Texto</h2>
+									<textarea type="text" name="area" row="6" style="height: 80%" id="comandos"></textarea> 
+								</div>
+								<div class="gallery">
+									<div class="group span-3">
+										<a href="images/gallery/thumbs/01.jpg" class="image filtered span-3" data-position="bottom"><img src="images/gallery/thumbs/01.jpg" alt="" /></a>
+										<a href="images/onda1.gif" class="image filtered span-1-5" data-position="center"><img src="images/onda1.gif" alt="" /></a>
+										<a href="images/onda2.gif" class="image filtered span-1-5" data-position="center"><img src="images/onda2.gif" alt="" /></a>
+									</div>
+
+									<!-- Implementando api de google -->
+									<audio src="" hidden class="speech"></audio>
+									<input type="text" name="text" id="texto">
+									<input type="button" name="Escuchar" value="Escuchar" id="escuchar">
+									<script>
+										$(function(){
+											$("#escuchar").on("click",function(e){
+												e.preventDefault();
+												var text=$("#texto").val();
+												text=encodeURIComponent(text);
+												var url="http://translate.google.com/translate_tts?tl=es&q="+text;
+												$("audio").attr('src',url).get(0).play();
+
+											})	
+										});
+
+									</script>
+
+
+
+									<!--
+									<a href="images/gallery/fulls/04.jpg" class="image filtered span-2-5" data-position="top"><img src="images/gallery/thumbs/04.jpg" alt="" /></a>
+									
+									<div class="group span-4-5">
+										<a href="images/gallery/fulls/05.jpg" class="image filtered span-3" data-position="top"><img src="images/gallery/thumbs/05.jpg" alt="" /></a>
+										<a href="images/gallery/fulls/06.jpg" class="image filtered span-1-5" data-position="center"><img src="images/gallery/thumbs/06.jpg" alt="" /></a>
+										<a href="images/gallery/fulls/07.jpg" class="image filtered span-1-5" data-position="bottom"><img src="images/gallery/thumbs/07.jpg" alt="" /></a>
+										<a href="images/gallery/fulls/08.jpg" class="image filtered span-3" data-position="top"><img src="images/gallery/thumbs/08.jpg" alt="" /></a>
+									</div>  
+
+									<a href="images/gallery/fulls/09.jpg" class="image filtered span-2-5" data-position="right"><img src="images/gallery/thumbs/09.jpg" alt="" /></a>
+									-->
+								</div>
+							</section>
+
+						<!-- Panel -->
+							<section class="panel color4-alt">
+								<div class="intro color4">
+									<h2 class="major">Contactenos</h2>
+									<p>Soy un asistente que puede ayudarte a realizar todas tus tareas desde cualquier lugar, utilazando tecnologias vanguardistas, colaborando con la automatizacion de tu hogar. Contratame y nos entenderemos muy bien.</p>
+								</div>
+								<div class="inner columns divided">
+									<div class="span-3-25">
+										<form method="post" action="#">
+											<div class="field half">
+												<label for="name">Name</label>
+												<input type="text" name="name" id="name" />
+											</div>
+											<div class="field half">
+												<label for="email">Email</label>
+												<input type="email" name="email" id="email" />
+											</div>
+											<div class="field">
+												<label for="message">Message</label>
+												<textarea name="message" id="message" rows="4"></textarea>
+											</div>
+											<ul class="actions">
+												<li><input type="submit" value="Send Message" class="button special" /></li>
+											</ul>
+										</form>
+									</div>
+									<div class="span-1-5">
+										<ul class="contact-icons color1">
+											<li class="icon fa-twitter"><a href="#">@untitled-tld</a></li>
+											<li class="icon fa-facebook"><a href="#">facebook.com/untitled</a></li>
+											<li class="icon fa-snapchat-ghost"><a href="#">@untitled-tld</a></li>
+											<li class="icon fa-instagram"><a href="#">@untitled-tld</a></li>
+											<li class="icon fa-medium"><a href="#">medium.com/untitled</a></li>
+										</ul>
+									</div>
+								</div>
+							</section>
+
+
+						<!-- Copyright -->
+							<div class="copyright">&copy; Analoga I. Design: <a href="">Developers</a>.</div>
+					</div>
+
+			</div>
+
+			<!-- Importar el script para recuperar la vos de la persona-->
+			<script src="voice.js"></script>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+	  <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.4.0/annyang.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  
+</head>
+<body>
+<input type="text" name="comandos" style="width: 100%;" id="comandos">
+
+<script>
+
+ 
+function web(voz){
+    document.getElementById("comandos").value=voz;
+    //console.log(voz);
+    $.ajax({
+     type: 'post',
+     url: 'procesa.php',
+     data: {'voz':voz},
+     success: function(){
+     },
+     error: function(){
+        alert("No se ha escuchado bien");
+     }
+   });
+           
+}
+
+//Reconocimiento de voz
+if (annyang) {
+annyang.setLanguage('es-ES');
+var commands = {
+  '*voz' : web 
+  };
+annyang.addCommands(commands);
+ 
+  // Start listening.
+  annyang.start();
+
+}  
+
+function ondaSound(){
+  var c = document.getElementById('canv');
+    var $ = c.getContext('2d');
+
+    var w = c.width = window.innerWidth;
+    var h = c.height = window.innerHeight;
+
+    var draw = function(t) {
+      $.lineWidth = 1;
+      $.fillStyle = 'rgb(0, 0, 0)';
+      $.fillRect(0, 0, w, h);
+
+      for (var i = -60; i < 60; i += 1) {
+        $.strokeStyle = 'rgb(255, 255, 255)';
+        $.beginPath();
+        $.moveTo(0, h / 2);
+        for (var j = 0; j < w; j += 10) {
+          $.lineTo(10 * Math.cos(i) +
+            j + (0.008 * j * j),
+            Math.floor(h / 2 + j / 2 *
+              Math.cos(j / 50 - t / 50 - i / 118) +
+              (i * 0.9) * Math.cos(j / 25 - (i + t) / 65)));
+        };
+        $.stroke();
+      }
+    }
+    var t = 0;
+
+    window.addEventListener('resize', function() {
+      c.width = w = window.innerWidth;
+      c.height = h = window.innerHeight;
+    }, false);
+
+    var run = function() {
+      window.requestAnimationFrame(run);
+      t += 5;
+      draw(t);
+    };
+
+    run();
+}
+</script>
+</body>
+</html>
